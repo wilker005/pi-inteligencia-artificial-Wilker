@@ -153,26 +153,24 @@ services:
     volumes:
       - ./api-ia/backend-image/images:/images
 
-  openai-whisper-asr-webservice:
+  backend-files:
+    build:
+      context: api-ia/backend-files
+      dockerfile: Dockerfile
     ports:
-      - '9000:9000'
+      - 9000:9000
+    develop:
+      watch:
+      - action: sync
+        path: ./api-ia/backend-files/app/webservice.py
+        target: /app/webservice.py
+    volumes:
+      - /app
+
+  whisper-webservice:
+    ports:
+      - '9002:9000'
     environment:
       - ASR_MODEL=base
-      - ASR_ENGINE=faster_whisper
+      - ASR_ENGINE=openai_whisper
     image: 'onerahmet/openai-whisper-asr-webservice:latest'
-
-  faster-whisper:
-    image: lscr.io/linuxserver/faster-whisper:latest
-    container_name: faster-whisper
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
-      - WHISPER_MODEL=tiny-int8
-      - WHISPER_BEAM=1 #optional
-      - WHISPER_LANG=en #optional
-    volumes:
-      - /path/to/faster-whisper/data:/config
-    ports:
-      - 10300:10300
-    restart: unless-stopped
