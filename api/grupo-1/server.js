@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const uniqueValidator = require('mongoose-unique-validator');
 //const routes = require('./routes');
 const User = require('./models/User');
-
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 // Carregar variáveis de ambiente
 dotenv.config();
@@ -392,3 +392,27 @@ function autenticar(req, res, next) {
 }
 
 module.exports = autenticar;
+
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
+
+app.post("/gerar-descricao", async (req, res) => {
+    try {
+        const { palavrasChave } = req.body;
+
+        if (!palavrasChave) {
+            return res.status(400).json({ erro: "Palavras-chave são obrigatórias." });
+        }
+
+        // Selecionando o modelo Gemini
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+        // Gerando a descrição
+        const response = await model.generateContent(`Crie uma descrição para um evento com os seguintes temas: ${palavrasChave}.`);
+        const descricao = response.response.text(); // Pegando o texto gerado
+
+        res.json({ descricao });
+    } catch (error) {
+        console.error("Erro ao gerar descrição:", error);
+        res.status(500).json({ erro: "Erro interno ao gerar descrição" });
+    }
+});

@@ -22,7 +22,9 @@
                     <br>
                     <div class="row">
                         <div class="col-1 offset-1">
-                            <a href="index.html"><span class="material-icons" style="color:#892CDC ;">arrow_back_ios</span></a></div>
+                            <a href="index.html"><span class="material-icons"
+                                    style="color:#892CDC ;">arrow_back_ios</span></a>
+                        </div>
                         <div class="col-8">
                             <h2 class="text-center" style="font-size: 1.5em; color:#892CDC">Cadastrar Evento</h2>
                         </div>
@@ -54,22 +56,33 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="palavrasChave" class="form-label">Palavras-chave</label>
+                            <input type="text" class="form-control" id="palavrasChaveInput" 
+                                placeholder="Ex: festival de música, rock, ao vivo">
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="gerarDescricao()">Gerar Descrição com IA</button>
                         <div class="mb-3">
                             <label for="descricao" class="form-label">Descrição</label>
-                            <textarea class="form-control" id="descricaoInput" rows="3" placeholder="Digite a descrição do evento" style="border-radius:10px ;" required></textarea>
+                            <textarea class="form-control" id="descricaoInput" rows="3" 
+                                placeholder="A IA gerará a descrição aqui" required></textarea>
                         </div>
+
                         <div class="mb-3 ">
                             <label for="url_banner" class="form-label">URL do Banner</label>
                             <div class="input-group flex-nowrap">
                                 <span class="input-group-text" id="iconeLink"><i class="bi bi-link-45deg "></i></span>
-                                <input type="text" class="form-control " id="urlLogoInput" placeholder="Digite a URL do logo " required>
+                                <input type="text" class="form-control " id="urlLogoInput"
+                                    placeholder="Digite a URL do logo " required>
                             </div>
                         </div>
                         <div class="mb-3 ">
                             <label for="url_site " class="form-label ">URL do Site</label>
                             <div class="input-group flex-nowrap">
                                 <span class="input-group-text" id="iconeLink"><i class="bi bi-link-45deg "></i></span>
-                                <input type="text" class="form-control " id="urlSiteInput" placeholder="Digite a URL do site do evento " required>
+                                <input type="text" class="form-control " id="urlSiteInput"
+                                    placeholder="Digite a URL do site do evento " required>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -83,23 +96,27 @@
                                 <option value="Workshop">Workshop</option>
                             </select>
                             <div id="passwordHelpBlock" class="form-text" style="color: #892CDC;">
-                                A Categoria escolhida acima irá definir em qual categoria o evento se enquadra para pesquisas e filtros.
+                                A Categoria escolhida acima irá definir em qual categoria o evento se enquadra para
+                                pesquisas e filtros.
                             </div>
                         </div>
                         <br>
                         <h4 style="border-left: solid 4px #892CDC; padding-left: 10px">Localização</h4>
                         <div class="mb-3 ">
                             <label for="cep" class="form-label ">CEP</label>
-                            <input type="text " class="form-control " id="cepInput" placeholder="_____-__" maxlength="9" required>
+                            <input type="text " class="form-control " id="cepInput" placeholder="_____-__" maxlength="9"
+                                required>
                         </div>
                         <div class="row">
                             <div class="mb-3 col-9">
                                 <label for="endereco " class="form-label ">Endereço</label>
-                                <input type="text " class="form-control " id="enderecoInput" placeholder="Rua, Avenida..." disabled>
+                                <input type="text " class="form-control " id="enderecoInput"
+                                    placeholder="Rua, Avenida..." disabled>
                             </div>
                             <div class="mb-3 col-3">
                                 <label for="numero" class="form-label ">Número</label>
-                                <input type="text " class="form-control text-center" id="numeroInput" placeholder="nº" required>
+                                <input type="text " class="form-control text-center" id="numeroInput" placeholder="nº"
+                                    required>
                             </div>
                         </div>
                         <div class="mb-3 ">
@@ -118,7 +135,8 @@
                         </div>
                         <div class="row">
                             <div class="col-4 offset-4">
-                                <button type="button" class="btn btnCadastrarEvento" style="width: 100%;" onclick="dataEventoComparacao()">Cadastrar</button>
+                                <button type="button" class="btn btnCadastrarEvento" style="width: 100%;"
+                                    onclick="dataEventoComparacao()">Cadastrar</button>
                             </div>
                         </div>
                         <br>
@@ -129,7 +147,7 @@
                 <br>
             </div>
             <footer>
-                <div class="text-center" style="color: gray;">Eventos+ 2024</div>
+                <div class="text-center" style="color: gray;">Eventos+ 2025</div>
             </footer>
         </div>
     </div>
@@ -213,7 +231,7 @@
         }
 
         // Evento para disparar a busca ao sair do campo de CEP
-        document.querySelector("#cepInput").addEventListener("blur", function() {
+        document.querySelector("#cepInput").addEventListener("blur", function () {
             const cep = this.value.replace(/\D/g, ""); // Remove caracteres não numéricos
             if (cep.length === 8) {
                 buscarCEP(cep);
@@ -223,7 +241,7 @@
             }
         });
         const protocolo = 'http://'
-        const baseURL = 'localhost:3000'
+        const baseURL = 'localhost:3001'
 
         function dataEventoComparacao() {
             const dataInicioInput = document.querySelector('#dataInicioInput');
@@ -331,6 +349,38 @@
                 alert("Erro ao cadastrar o evento. Verifique os dados e tente novamente.");
             }
         }
+
+        async function gerarDescricao() {
+    const palavrasChave = document.getElementById("palavrasChaveInput").value;
+    const descricaoInput = document.getElementById("descricaoInput");
+
+    if (!palavrasChave.trim()) {
+        alert("Por favor, insira palavras-chave para gerar a descrição.");
+        return;
+    }
+
+    try {
+        const response = await fetch("http://localhost:3001/gerar-descricao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ palavrasChave })
+        });
+
+        if (!response.ok) {
+            throw new Error("Erro ao gerar a descrição");
+        }
+
+        const data = await response.json();
+        descricaoInput.value = data.descricao || "Erro ao gerar a descrição.";
+    } catch (error) {
+        console.error("Erro na requisição:", error);
+        descricaoInput.value = "Erro ao gerar a descrição.";
+    }
+}
+
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>

@@ -109,3 +109,50 @@ Estudem as aplicações do modelo para que possam tirar suas dúvidas a partir d
 Bom final de férias e até lá,
 Prof. Marco.
 
+
+Descrição do Projeto
+
+Este projeto utiliza a API do Gemini AI para gerar automaticamente descrições detalhadas para eventos criados no site. Com essa funcionalidade, os usuários podem criar descrições otimizadas e atrativas sem esforço e em poucos cliques.
+
+Configuração e Instalação
+
+1. Obtenha a Chave da API Gemini AI
+
+Para utilizar a IA, é necessário obter uma chave de acesso. Para isso, acesse o link abaixo e gere sua chave:
+
+https://aistudio.google.com/app/apikey
+
+2. Configure a Chave no Projeto
+
+Após obter sua chave, adicione-a ao arquivo .env localizado na pasta api do projeto. O arquivo .env deve conter a seguinte linha:
+
+GEMINI_API_KEY=SUA_CHAVE_AQUI
+
+3. Execute os Servidores
+
+Para iniciar o projeto corretamente, execute os dois servidores necessários:
+
+# No backend
+cd api
+npm install  # Caso não tenha instalado as dependências
+npm start
+
+# No frontend
+cd ../frontend
+npm install  # Caso não tenha instalado as dependências
+npm start
+
+4. Utilize a Geração de Descrição
+
+Entre no site, acesse a tela de criação de eventos e utilize a funcionalidade:
+
+Localize o botão cinza "Gerar Descrição".
+
+Insira palavras-chave na caixa de texto.
+
+Clique no botão e aguarde a IA gerar uma descrição personalizada automaticamente.
+
+Com isso, você poderá criar descrições impactantes e otimizadas para seus eventos de forma simples e eficiente.
+
+
+LINK DO FORK DO OUTRO PROJETO COM IA funcionando: https://github.com/wilker005/pi-2024-multiplataformaIA
