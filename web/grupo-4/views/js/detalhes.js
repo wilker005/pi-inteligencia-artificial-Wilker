@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        const response = await fetch(`http://localhost:3000/eventos/${eventoId}`);
+        const response = await fetch(`http://localhost:3001/eventos/${eventoId}`);
         if (!response.ok) {
             throw new Error(`Erro ao buscar evento: ${response.status}`);
         }

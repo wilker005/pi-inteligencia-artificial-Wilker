@@ -115,7 +115,7 @@ function salvaArquivo(req,res) {
     });
 }
 
-var port = process.env.PORT || '3000'
+var port = process.env.PORT || '3001'
 app.listen(port, err => {
     if (err)
         throw err

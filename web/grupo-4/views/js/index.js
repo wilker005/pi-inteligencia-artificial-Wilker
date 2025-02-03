@@ -1,7 +1,7 @@
 // Função para obter os eventos
 async function obterEventos() {
     const eventosEndpoint = '/eventos';
-    const URLCompleta = `http://localhost:3000${eventosEndpoint}`;
+    const URLCompleta = `http://localhost:3001${eventosEndpoint}`;
 
     try {
         // Faz a requisição GET para o servidor
@@ -58,7 +58,7 @@ async function obterEventos() {
 // Função para obter os eventos com estado "SP"
 async function obterEventosSP() {
     const eventosEndpoint = '/eventos';
-    const URLCompleta = `http://localhost:3000${eventosEndpoint}`;
+    const URLCompleta = `http://localhost:3001${eventosEndpoint}`;
 
     try {
         // Faz a requisição GET para o servidor
@@ -114,7 +114,7 @@ async function obterEventosSP() {
 
 async function obterOrganizadores() {
     const organizadoresEndpoint = '/organizadores'; // Endpoint para buscar organizadores
-    const URLCompleta = `http://localhost:3000${organizadoresEndpoint}`; // URL completa da API
+    const URLCompleta = `http://localhost:3001${organizadoresEndpoint}`; // URL completa da API
 
     try {
         const organizadores = (await axios.get(URLCompleta)).data;

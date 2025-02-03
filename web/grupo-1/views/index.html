@@ -22,7 +22,8 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title " id="loginModalLabel" style="border-left: solid 4px #892CDC; padding-left: 10px">Entrar</h5>
+                    <h5 class="modal-title " id="loginModalLabel"
+                        style="border-left: solid 4px #892CDC; padding-left: 10px">Entrar</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -30,15 +31,22 @@
                     <form id="loginForm" style="margin-left: 1.5em;margin-right:1.5em">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="emailLogin" placeholder="Digite seu email" required>
+                            <input type="email" class="form-control" id="emailLogin" placeholder="Digite seu email"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="passwordLogin" placeholder="Digite sua senha" required>
+                            <input type="password" class="form-control" id="passwordLogin"
+                                placeholder="Digite sua senha" required>
                         </div>
-                        <button type="button" class="btn btn-primary w-100" style="border-radius: 2em;background-color:#892CDC; border: none" onclick="loginUser(event)">Entrar</button>
+                        <button type="button" class="btn btn-primary w-100"
+                            style="border-radius: 2em;background-color:#892CDC; border: none"
+                            onclick="loginUser(event)">Entrar</button>
                         <br>
-                        <button type="button" class="btn  btn-link w-100" style="margin-top: 1em;background-color: none;text-decoration:none;color:892CDC" data-bs-target="#cadastroModal" data-bs-toggle="modal" data-bs-dismiss="modal">Usuário novo? Cadastre-se aqui</button>
+                        <button type="button" class="btn  btn-link w-100"
+                            style="margin-top: 1em;background-color: none;text-decoration:none;color:892CDC"
+                            data-bs-target="#cadastroModal" data-bs-toggle="modal" data-bs-dismiss="modal">Usuário novo?
+                            Cadastre-se aqui</button>
                     </form>
                 </div>
             </div>
@@ -49,7 +57,8 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title " id="cadastroModalLabel" style="border-left: solid 4px #892CDC; padding-left: 10px">Cadastro</h5>
+                    <h5 class="modal-title " id="cadastroModalLabel"
+                        style="border-left: solid 4px #892CDC; padding-left: 10px">Cadastro</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -57,23 +66,28 @@
                     <form id="cadastroForm" style="margin-left: 1.5em;margin-right:1.5em">
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nomeCadastro" placeholder="Digite seu nome" required>
+                            <input type="text" class="form-control" id="nomeCadastro" placeholder="Digite seu nome"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="emailCadastro" placeholder="Digite seu email" required>
+                            <input type="email" class="form-control" id="emailCadastro" placeholder="Digite seu email"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="telefone" class="form-label">Telefone</label>
-                            <input type="tel" class="form-control" id="telefoneCadastro" placeholder="(XX) XXXXX-XXXX" required>
+                            <input type="tel" class="form-control" id="telefoneCadastro" placeholder="(XX) XXXXX-XXXX"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="cpf" class="form-label">CPF</label>
-                            <input type="text" class="form-control" id="cpfCadastro" placeholder="Digite seu CPF" required>
+                            <input type="text" class="form-control" id="cpfCadastro" placeholder="Digite seu CPF"
+                                required>
                         </div>
                         <div class="mb-3">
                             <label for="cpf" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="senhaCadastro" placeholder="Crie uma senha" required>
+                            <input type="password" class="form-control" id="senhaCadastro" placeholder="Crie uma senha"
+                                required>
                             <ul class="feedback-list mt-2" id="passwordFeedback">
                                 <li id="length" class="invalid">
                                     <span><i class="bi bi-x-circle-fill"></i></span> Pelo menos 8 caracteres
@@ -88,12 +102,15 @@
                                     <span><i class="bi bi-x-circle-fill"></i></span> Pelo menos 1 número
                                 </li>
                                 <li id="special" class="invalid">
-                                    <span><i class="bi bi-x-circle-fill"></i></span> Pelo menos 1 caractere especial (@, #, !, ., etc.)
+                                    <span><i class="bi bi-x-circle-fill"></i></span> Pelo menos 1 caractere especial (@,
+                                    #, !, ., etc.)
                                 </li>
                             </ul>
                         </div>
-                        <button id="registerButton" type="button" class="btn btn-primary w-100" style="border-radius: 2em; background-color: #892CDC; border: none" onclick="registerUser(event)" data-bs-dismiss="modal">
-                        Cadastrar
+                        <button id="registerButton" type="button" class="btn btn-primary w-100"
+                            style="border-radius: 2em; background-color: #892CDC; border: none"
+                            onclick="registerUser(event)" data-bs-dismiss="modal">
+                            Cadastrar
                         </button>
                     </form>
                 </div>
@@ -114,7 +131,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger" id="logoutConfirm" onclick="recarregar();">Deslogar</button>
+                    <button type="button" class="btn btn-danger" id="logoutConfirm"
+                        onclick="recarregar();">Deslogar</button>
                 </div>
             </div>
         </div>
@@ -124,8 +142,9 @@
         <div class="container-fluid">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <div id="logo">
-                    <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none col-xl-3">
-                        <img src="img/evento+2.svg" alt="" style="width: 150px;" class="me-5">
+                    <a href="index.html"
+                        class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none col-xl-3">
+                        <img src="../views/img/logo.png" alt="" style="width: 150px;" class="me-5">
                     </a>
                 </div>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 col-xl-6" role="search">
@@ -141,8 +160,13 @@
                 <div class="text-center">
                     <div class="row">
                         <div class="col">
-                            <button type="button" id="userButton" class="btn   btnEntrarCadastrar" data-bs-target="#loginModal" data-bs-toggle="modal" style="font-size: 0.9em;">Entrar | Cadastrar</button>
-                            <button type="button" id="cadastrarEventoButton" class="btn btn-primary" onclick="verificarLogin();" style="border-radius: 20px;background-color:#892CDC;border:none;">Cadastrar Evento</button>
+                            <button type="button" id="userButton" class="btn   btnEntrarCadastrar"
+                                data-bs-target="#loginModal" data-bs-toggle="modal" style="font-size: 0.9em;">Entrar |
+                                Cadastrar</button>
+                            <button type="button" id="cadastrarButton" class="btn btn-primary"
+                                onclick="verificarLogin();"
+                                style="border-radius: 20px;background-color:#892CDC;border:none;">Cadastrar
+                                Evento</button>
                         </div>
                     </div>
 
@@ -155,38 +179,52 @@
     <div class="container-fluid">
         <div class="row" style="background-color: #892CDC;">
             <div class="localizacao">
-                <b><p id="address" class="text-center"></p></b>
+                <b>
+                    <p id="address" class="text-center"></p>
+                </b>
             </div>
         </div>
     </div>
     <!-- submenu -->
     <div class="container-fluid">
         <div class="row">
-            <div class="menu2 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start col-xl-11 offset-xl-1">
-                <a href="#/Home" class="menuLink me-5 animated-border"><span><b><i class="bi bi-arrow-up" style="color: #892CDC;"></i></b></span> Em Alta</a>
-                <a href="#/AllianzParque" class="menuLink me-5 animated-border"><img src="img/allianzparquelogo.png" alt=""> Allianz Parque</a>
-                <a href="#/AcontecendoAgora" class="menuLink me-5 animated-border"><i class="bi bi-circle-fill fa-exclamation-circle blinking-icon" style="color: green;"></i> Acontecendo Agora</a>
+            <div
+                class="menu2 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start col-xl-11 offset-xl-1">
+                <a href="#/Home" class="menuLink me-5 animated-border"><span><b><i class="bi bi-arrow-up"
+                                style="color: #892CDC;"></i></b></span> Em Alta</a>
+                <a href="#/AllianzParque" class="menuLink me-5 animated-border"><img src="img/allianzparquelogo.png"
+                        alt=""> Allianz Parque</a>
+                <a href="#/AcontecendoAgora" class="menuLink me-5 animated-border"><i
+                        class="bi bi-circle-fill fa-exclamation-circle blinking-icon" style="color: green;"></i>
+                    Acontecendo Agora</a>
             </div>
         </div>
     </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-10 offset-1" style="margin-top:2em">
-                <!-- <img src="img/animaexpo.jpg" alt="" class="img-fluid" style="border-radius: 10px;"> -->
                 <div class="carrossel-container">
                     <div class="slides">
                         <div class="slide banners">
-                            <img src="img/animaexpo.jpg" alt="Foto 1" style="max-height: 600px;">
+                            <img src="https://assets.bileto.sympla.com.br/eventmanager/production/3ol8ij3shan2h2d91iqa8bcgfdgkf8m395qlb47pen0t3vm69c1tpa6rbk766l49910t3e8cc4529e3j6ltd9r71q3p8aq285g502r0.webp" alt="Foto 1" style="max-height: 600px;">
                         </div>
                         <div class="slide banners">
-                            <img src="https://assets.bileto.sympla.com.br/eventmanager/production/2n331o8t2gap3vmk5dqdfsf2dsho1kaqf2cuhtu5qf17a6k4jqpncg1p6bfe6jacm8ao9qcg8lbmqa8vgnvma1t6n4baodfk9bklmua.webp" alt="Foto 2" style="max-height: 600px;">
+                            <img src="https://assets.bileto.sympla.com.br/eventmanager/production/2n331o8t2gap3vmk5dqdfsf2dsho1kaqf2cuhtu5qf17a6k4jqpncg1p6bfe6jacm8ao9qcg8lbmqa8vgnvma1t6n4baodfk9bklmua.webp"
+                                alt="Foto 2" style="max-height: 600px;">
                         </div>
                         <div class="slide banners">
-                            <img src="https://images.sympla.com.br/66fd5b21e07ad.jpg" alt="Foto 3" style="max-height: 600px;">
+                            <img src="https://images.sympla.com.br/66fd5b21e07ad.jpg" alt="Foto 3"
+                                style="max-height: 600px;">
+                        </div>
+                        <div class="slide banners">
+                            <img src="https://assets.bileto.sympla.com.br/eventmanager/production/1utvr7t00v8oskkkluh9pg60gdho3584ltc2kir4sc9lbees38grh37e8sc1otqei94a5gncqjqfvf5rrmcfnm8g8127gauspfm8f0s.jpeg" alt="Foto 4"
+                                style="max-height: 600px;">
                         </div>
                     </div>
-                    <button class="prev" onclick="mudarSlide(-1)"><span class="material-icons">chevron_left</span></button>
-                    <button class="next" onclick="mudarSlide(1)"><span class="material-icons">chevron_right</span></button>
+                    <button class="prev" onclick="mudarSlide(-1)"><span
+                            class="material-icons">chevron_left</span></button>
+                    <button class="next" onclick="mudarSlide(1)"><span
+                            class="material-icons">chevron_right</span></button>
                     <div class="bolinhas" id="bolinhas-container"></div>
                 </div>
             </div>
@@ -220,7 +258,7 @@
             const userButton = document.getElementById("userButton");
 
             // Função para verificar login
-            window.verificarLogin = function() {
+            window.verificarLogin = function () {
                 if (userButton.classList.contains("btnLogado")) {
                     // Usuário está logado, redireciona para a página de criação do evento
                     window.location.href = "cadastroEvento.html"; // Substitua pelo caminho da sua página
@@ -248,17 +286,15 @@
             const cpf = document.getElementById("cpfCadastro").value;
             const telefone = document.getElementById("telefoneCadastro").value;
 
-            const API_BASE_URL = "http://localhost:3000";
+            const API_BASE_URL = "http://localhost:3001";
             if (!nome || !email || !senha || !cpf || !telefone) {
-                alert('Por favor, preencha todos os campos antes de cadastrar.')
+                alert('Por favor, preencha todos os campos antes de cadastrar.');
                 return;
             }
 
             if (senha.length < 8) {
                 alert("A senha deve ter pelo menos 8 caracteres.");
                 return;
-
-
             }
 
             try {
@@ -277,14 +313,14 @@
                 });
 
                 const result = await response.json();
+
                 if (response.ok) {
                     alert(result.message || "Usuário cadastrado com sucesso!");
                     document.getElementById("cadastroForm").reset();
+
                     // Fecha o modal manualmente
                     const cadastroModal = bootstrap.Modal.getInstance(document.getElementById('cadastroModal'));
-                    cadastroModal.hide();
-
-
+                    if (cadastroModal) cadastroModal.hide();
 
                 } else {
                     alert(result.message || "Erro ao cadastrar usuário");
@@ -292,68 +328,49 @@
             } catch (error) {
                 console.error('Erro:', error);
                 alert("Erro ao cadastrar usuário. Tente novamente mais tarde.");
-
             }
-            if (!response.ok) {
-                alert(result.message || "Erro ao cadastrar usuário");
-                return;
-            }
-
         }
-
-
-
-
 
         async function loginUser(event) {
             event.preventDefault();
             const email = document.getElementById("emailLogin").value;
             const senha = document.getElementById("passwordLogin").value;
-            const payload = {
-                email,
-                senha
-            };
-            try {
-                const response = await fetch("http://localhost:3000/login", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(payload),
-                });
-                if (response.ok) {
-                    const user = await response.json();
-                    console.log("Resposta da API:", user); // Verifica a estrutura da resposta
 
+            try {
+                const response = await fetch("http://localhost:3001/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, senha }),
+                });
+
+                const user = await response.json();
+                console.log("Resposta da API:", user); // <-- Adiciona log para depuração
+
+                if (response.ok) {
                     alert("Login bem-sucedido!");
 
-                    // Armazena o token no localStorage
-                    localStorage.setItem("token", user.token);
-                    localStorage.setItem("nomeUsuario", user.nome);
-
                     if (user && user.nome) {
+                        localStorage.setItem("token", user.token);
+                        localStorage.setItem("nomeUsuario", user.nome);
+
                         const userButton = document.getElementById("userButton");
-                        userButton.textContent = user.nome; // Atualiza o texto do botão
+                        userButton.textContent = user.nome;
                         userButton.classList.remove("btnEntrarCadastrar");
                         userButton.classList.add("btnLogado");
-                        userButton.setAttribute("data-bs-target", "#logoutModal"); // Define o alvo do modal de deslogar
-                        userButton.setAttribute("data-bs-toggle", "modal"); // Configura o modal
-
-
+                        userButton.setAttribute("data-bs-target", "#logoutModal");
+                        userButton.setAttribute("data-bs-toggle", "modal");
                     } else {
                         alert("Erro no login: nome do usuário não encontrado.");
                     }
                 } else {
-                    const error = await response.text();
-                    alert("Erro no login: " + error);
+                    alert("Erro no login: " + user.message);
                 }
             } catch (error) {
                 console.error("Erro ao enviar o login:", error);
                 alert("Erro no servidor. Tente novamente mais tarde.");
             }
+
         }
-
-
 
         async function logoutUser() {
             localStorage.removeItem("token");
@@ -369,7 +386,7 @@
         // Função para buscar eventos do servidor
         async function fetchEventos() {
             try {
-                const response = await fetch('http://localhost:3000/eventos');
+                const response = await fetch('http://localhost:3001/api/eventos');
                 if (!response.ok) {
                     throw new Error('Erro ao buscar os eventos');
                 }
@@ -388,10 +405,10 @@
             eventosContainer.innerHTML = ''; // Limpar o contêiner antes de renderizar os eventos
 
             eventos.forEach(evento => {
-                        const eventoElement = document.createElement('div');
-                        eventoElement.classList.add('col-12', 'col-md-6', 'col-lg-3', 'col-xl-3', 'mb-3');
+                const eventoElement = document.createElement('div');
+                eventoElement.classList.add('col-12', 'col-md-6', 'col-lg-3', 'col-xl-3', 'mb-3');
 
-                        eventoElement.innerHTML = `
+                eventoElement.innerHTML = `
                     <div class="card h-100 shadow" style="border: 2px solid #d4d4d4; border-radius:15px">
                         ${evento.urlLogo ? `<img src="${evento.urlLogo}" class="card-img-top" alt="${evento.nomeEvento} Logo" style="border-radius: 15px 15px 0px 0px;height:200px">` : ''}
                         
@@ -425,7 +442,7 @@
             // Redireciona para a página de detalhes com o ID do evento na URL
             window.location.href = `detalheEvento.html?id=${eventId}`;
         }
-        
+
         // Chamar a função assim que a página for carregada
         document.addEventListener('DOMContentLoaded', fetchEventos);
         // Chamar a função assim que a página for carregada
@@ -498,7 +515,7 @@
             updateFeedback(feedbackItems.special, hasSpecial);
         });
 
-        
+
         // Atualiza o estado visual dos itens de feedback
         function updateFeedback(element, isValid) {
             const icon = element.querySelector("i");
@@ -516,43 +533,43 @@
         }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-        const senhaInput = document.getElementById("senhaCadastro");
-        const feedbackItems = {
-            length: document.getElementById("length"),
-            uppercase: document.getElementById("uppercase"),
-            lowercase: document.getElementById("lowercase"),
-            number: document.getElementById("number"),
-            special: document.getElementById("special")
-        };
-        const cadastrarButton = document.getElementById("cadastrarButton");
-
-        // Validação em tempo real
-        senhaInput.addEventListener("input", () => {
-            const senha = senhaInput.value;
-            const validacoes = {
-                length: senha.length >= 8,
-                uppercase: /[A-Z]/.test(senha),
-                lowercase: /[a-z]/.test(senha),
-                number: /\d/.test(senha),
-                special: /[!@#$%^&*(),.?":{}|<>]/.test(senha)
+        document.addEventListener("DOMContentLoaded", () => {
+            const senhaInput = document.getElementById("senhaCadastro");
+            const feedbackItems = {
+                length: document.getElementById("length"),
+                uppercase: document.getElementById("uppercase"),
+                lowercase: document.getElementById("lowercase"),
+                number: document.getElementById("number"),
+                special: document.getElementById("special")
             };
+            const cadastrarButton = document.getElementById("cadastrarButton");
 
-            // Atualizar o feedback visual
-            for (const [key, isValid] of Object.entries(validacoes)) {
-                feedbackItems[key].classList.toggle("invalid", !isValid);
-                feedbackItems[key].classList.toggle("valid", isValid);
-            }
+            // Validação em tempo real
+            senhaInput.addEventListener("input", () => {
+                const senha = senhaInput.value;
+                const validacoes = {
+                    length: senha.length >= 8,
+                    uppercase: /[A-Z]/.test(senha),
+                    lowercase: /[a-z]/.test(senha),
+                    number: /\d/.test(senha),
+                    special: /[!@#$%^&*(),.?":{}|<>]/.test(senha)
+                };
 
-            // Habilitar ou desabilitar o botão
-            const todasValidacoesAtendidas = Object.values(validacoes).every(Boolean);
-            cadastrarButton.disabled = !todasValidacoesAtendidas;
+                // Atualizar o feedback visual
+                for (const [key, isValid] of Object.entries(validacoes)) {
+                    feedbackItems[key].classList.toggle("invalid", !isValid);
+                    feedbackItems[key].classList.toggle("valid", isValid);
+                }
+
+                // Habilitar ou desabilitar o botão
+                const todasValidacoesAtendidas = Object.values(validacoes).every(Boolean);
+                cadastrarButton.disabled = !todasValidacoesAtendidas;
+            });
         });
-    });
     </script>
     <script>
         // Script para tratar o evento de envio do formulário
-        document.getElementById("loginForm").addEventListener("submit", function(e) {
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
             e.preventDefault();
             const email = document.getElementById("email").value;
             const senha = document.getElementById("password").value;
@@ -566,7 +583,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <!-- JavaScript -->
     <script>
         // Chama a função de localização quando o site é totalmente carregado
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             getLocation();
         });
 

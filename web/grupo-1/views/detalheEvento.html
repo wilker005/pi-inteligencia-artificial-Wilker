@@ -248,7 +248,7 @@
 
             if (eventId) {
                 // Fazer chamada para a API
-                const url = `http://127.0.0.1:3000/eventos/${eventId}`;
+                const url = `http://localhost:3001/eventos/${eventId}`;
                 console.log('URL da API:', url); // Depuração para ver se a URL da API está correta
 
                 fetch(url)
@@ -325,7 +325,7 @@
             };
 
             try {
-                const response = await fetch("http://localhost:3000/signup ", {
+                const response = await fetch("http://localhost:3001/signup ", {
                     method: "POST ",
                     headers: {
                         "Content-Type ": "application/json ",
@@ -357,7 +357,7 @@
                 senha
             };
             try {
-                const response = await fetch("http://localhost:3000/login", {
+                const response = await fetch("http://localhost:3001/login", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

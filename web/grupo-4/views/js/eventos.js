@@ -1,6 +1,6 @@
 async function obterEventos() {
     const eventosEndpoint = '/eventos';
-    const URLCompleta = `http://localhost:3000${eventosEndpoint}`;
+    const URLCompleta = `http://localhost:3001${eventosEndpoint}`;
 
     try {
         // Faz a requisição GET para o servidor

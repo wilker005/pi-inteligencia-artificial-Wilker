@@ -36,7 +36,7 @@ async function postEvent(event) {
     event.preventDefault();
 
     const eventosEndpoint = '/eventos';
-    const URLCompleta = `http://localhost:3000${eventosEndpoint}`;
+    const URLCompleta = `http://localhost:3001${eventosEndpoint}`;
 
     const token = localStorage.getItem('token');
     if (!token) {
@@ -116,7 +116,7 @@ function exibirAlerta(tipo, mensagem) {
         icon: tipo,
         title: mensagem,
         showConfirmButton: false,
-        timer: 3000,
+        timer: 3001,
         toast: true,
         position: 'top-end',
     });

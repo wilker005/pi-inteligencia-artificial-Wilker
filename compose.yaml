@@ -78,7 +78,7 @@ services:
     build: ./api/exemplo
     container_name: exemplo-1-api-container
     ports:
-      - "3000:3000"
+      - "3001:3001"
     volumes:
       - ./api/exemplo:/app
       - ./api/exemplo/mongodata:/data/db

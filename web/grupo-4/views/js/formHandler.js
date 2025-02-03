@@ -98,7 +98,7 @@ const handleSubmit = (formId, endpoint, messageId, callback) => {
                 document.getElementById(messageId).classList.add('d-none');
                 form.reset();
                 if (callback) callback();
-            }, 3000);
+            }, 3001);
         } catch (error) {
             const errorMessage = error.response?.data?.mensagem || 'Erro ao conectar-se ao servidor.';
             showMessage(messageId, 'danger', errorMessage);
@@ -127,7 +127,7 @@ const handleCreateEvent = () => {
         const token = localStorage.getItem('token');
         if (!token) {
             // Caso o usuário não esteja logado, exibir alerta e modal de login
-            exibirAlerta('.alert-evento', 'Você precisa estar logado para criar um evento', ['show', 'alert-warning'], ['d-none'], 3000);
+            exibirAlerta('.alert-evento', 'Você precisa estar logado para criar um evento', ['show', 'alert-warning'], ['d-none'], 3001);
 
             // Exibir modal de login
             setTimeout(() => {
@@ -147,7 +147,7 @@ function exibirAlerta(tipo, mensagem) {
         icon: tipo,
         title: mensagem,
         showConfirmButton: false,
-        timer: 3000,
+        timer: 3001,
         toast: true,
         position: 'top-end',
     });
@@ -187,7 +187,7 @@ document.getElementById("cep").addEventListener("blur", function () {
     }
 });
 
-handleSubmit('loginForm', 'http://localhost:3000/login', 'loginMessage');
-handleSubmit('loginOrgForm', 'http://localhost:3000/loginOrganizador', 'loginOrgMessage');
-handleSubmit('signupForm', 'http://localhost:3000/signup', 'signupMessage');
-handleSubmit('signupOrgForm', 'http://localhost:3000/organizador', 'signupOrgMessage');
+handleSubmit('loginForm', 'http://localhost:3001/login', 'loginMessage');
+handleSubmit('loginOrgForm', 'http://localhost:3001/loginOrganizador', 'loginOrgMessage');
+handleSubmit('signupForm', 'http://localhost:3001/signup', 'signupMessage');
+handleSubmit('signupOrgForm', 'http://localhost:3001/organizador', 'signupOrgMessage');

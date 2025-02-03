@@ -133,20 +133,21 @@ GEMINI_API_KEY=SUA_CHAVE_AQUI
 Para iniciar o projeto corretamente, execute os dois servidores necessários:
 
 # No backend
-cd api
+cd api/grupo-1
 npm install  # Caso não tenha instalado as dependências
-npm start
+npm install @google/generative-ai express cors body-parser dotenv #para instalar as dependências da Inteligência Artficial 
+npm start ou node server.js
 
 # No frontend
-cd ../frontend
+cd web/grupo-1
 npm install  # Caso não tenha instalado as dependências
-npm start
+npm start ou node webserver.js
 
 4. Utilize a Geração de Descrição
 
-Entre no site, acesse a tela de criação de eventos e utilize a funcionalidade:
+Entre no site, realize o login e acesse a tela de criação de eventos. Após esse processo:
 
-Localize o botão cinza "Gerar Descrição".
+Localize o botão roxo "Gerar Descrição".
 
 Insira palavras-chave na caixa de texto.
 
@@ -154,5 +155,6 @@ Clique no botão e aguarde a IA gerar uma descrição personalizada automaticame
 
 Com isso, você poderá criar descrições impactantes e otimizadas para seus eventos de forma simples e eficiente.
 
+Preencha os demais campos e clique em Cadastrar Evento.
 
-LINK DO FORK DO OUTRO PROJETO COM IA funcionando: https://github.com/wilker005/pi-2024-multiplataformaIA
+Ao voltar para a página inicial, o evento estará cadastrado

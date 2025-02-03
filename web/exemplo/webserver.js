@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var serverurl = 'http://exemplo-1-api:3000/'
+var serverurl = 'http://exemplo-1-api:3001/'
 app.set("view engine", "ejs");
 var axios = require('axios');
 
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
     });
 });
 
-var port = process.env.PORT || '8080'
+var port = process.env.PORT || '8081'
 app.listen(port, err => {
     if (err)
         throw err
