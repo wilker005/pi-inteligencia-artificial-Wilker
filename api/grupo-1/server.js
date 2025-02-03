@@ -327,7 +327,7 @@ app.post('/signup', async (req, res) => {
     }
 
     try {
-        const novoUsuario = new Usuario({
+        const novoUsuario = new User({
             email,
             nome,
             telefone,
@@ -350,30 +350,33 @@ app.post('/signup', async (req, res) => {
 
 
 // Rota para login de usuário
+
+
 app.post('/login', async (req, res) => {
     const { email, senha } = req.body;
-    console.log('Corpo da requisição:', req.body); 
-    console.log('Email:', email);
-    console.log('Senha fornecida:', senha);
 
     try {
-        // Usando o modelo correto "Usuario"
-        const user = await Usuario.findOne({ email });  
+        const user = await User.findOne({ email });
         if (!user) {
-            return res.status(404).send('Usuário não encontrado');
+            return res.status(404).json({ message: "Usuário não encontrado" });
         }
-        
-        const senhaValida = await bcrypt.compare(senha, user.senha);  // Comparando senha fornecida com a senha armazenada
+
+        const senhaValida = await bcrypt.compare(senha, user.senha);
         if (!senhaValida) {
-            return res.status(401).send('Senha inválida');
+            return res.status(401).json({ message: "Senha inválida" });
         }
-        
-        res.status(200).send('Login bem-sucedido');
+
+        const token = jwt.sign({ id: user._id, email: user.email }, process.env.JWT_SECRET || "chave-secreta", {
+            expiresIn: "1h",
+        });
+
+        res.status(200).json({ nome: user.nome, token });
     } catch (error) {
         console.error('Erro ao realizar login:', error);
-        res.status(500).send('Erro interno do servidor');
+        res.status(500).json({ message: "Erro interno do servidor" });
     }
 });
+
 
 
 function autenticar(req, res, next) {
