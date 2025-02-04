@@ -131,7 +131,7 @@ GEMINI_API_KEY=SUA_CHAVE_AQUI
 
 3. Execute os Servidores
 
-Para iniciar o projeto corretamente, execute os dois servidores necessários:
+Para iniciar o projeto corretamente, conecte-se ao seu banco de dados no MongoDB execute os dois servidores necessários:
 
 # No backend
 cd api/grupo-1
