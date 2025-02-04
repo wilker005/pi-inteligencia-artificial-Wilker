@@ -124,8 +124,9 @@ https://aistudio.google.com/app/apikey
 
 2. Configure a Chave no Projeto
 
-Após obter sua chave, adicione-a ao arquivo .env localizado na pasta api do projeto. O arquivo .env deve conter a seguinte linha:
+Após obter sua chave, adicione-a ao arquivo .env localizado na pasta api/grupo-1 do projeto. O arquivo .env deve conter as seguintes linhas:
 
+MONGODB_URL=mongodb://localhost:27017/eventos
 GEMINI_API_KEY=SUA_CHAVE_AQUI
 
 3. Execute os Servidores
